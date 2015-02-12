@@ -1,0 +1,26 @@
+{
+  "webservice" : {
+    "api" : {
+      "ping" : {
+        "method" : "GET",
+        "path" : "ping"
+      },
+      "register" : {
+        "method" : "POST",
+        "path" : "register"
+      },
+      "login" : {
+        "method" : "POST",
+        "path" : "login"
+      },
+      "profileView" : {
+        "method" : "GET",
+        "path" : "users"
+      },
+      "profileEdit" : {
+        "method" : "PUT",
+        "path" : "users"
+      }
+    }
+  }
+}

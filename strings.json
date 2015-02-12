@@ -1,0 +1,123 @@
+{
+  "about" : {
+    "title" : "About",
+    "name" : "Blue Rocket Fuel",
+    "text" : "An Open Source app starter kit for typical applications that require user login, registration and data interaction with a back-end web service."
+  },
+  "button" : {
+    "ok" : "OK",
+    "edit" : "Edit"
+  },
+  "register" : {
+    "title" : "Register",
+    "submit" : "Join",
+    "error" : {
+      "name" : {
+        "title" : "Missing Name",
+        "body" : "Please enter your name."
+      },
+      "email" : {
+        "missing" : {
+          "title" : "Missing Email",
+          "body" : "Please enter your email address."
+        },
+        "format" : {
+          "title" : "Invalid Email",
+          "body" : "The format of the email addres you entered does not appear to be correct."
+        }
+      },
+      "password" : {
+        "missing" : {
+          "title" : "Specify a Password",
+          "body" : "Please enter a password you would like to use."
+        },
+        "confirm" : {
+          "title" : "Confirm Password",
+          "body" : "Please re-type your password to confirm."
+        },
+        "match" : {
+          "title" : "Password Confirmation",
+          "body" : "The confirmation password you entered does not match. Please re-enter both."
+        }
+      },
+      "invalid" : {
+        "title" : "Username Taken",
+        "body" : "A user with that email has already been registered."
+      }
+    },
+    "login" : "Sign In",
+    "member" : "Already a member?",
+    "form" : {
+      "name" : "Name",
+      "email" : "Email",
+      "password" : "Password",
+      "confirmPassword" : "Confirm Password"
+    }
+  },
+  "login" : {
+    "title" : "Sign In",
+    "submit" : "Go",
+    "error" : {
+      "username" : {
+        "title" : "Username Required",
+        "body" : "Please enter the username you used when you registered."
+      },
+      "password" : {
+        "title" : "Missing Password",
+        "body" : "Please enter the password you selected when you registered."
+      },
+      "invalid" : {
+        "title" : "Invalid Login",
+        "body" : "Please check your email and password and try again."
+      }
+    },
+    "register" : "Register",
+    "new" : "New Member?",
+    "form" : {
+      "username" : "Username (email)",
+      "password" : "Password"
+    }
+  },
+  "main" : {
+    "title" : "Main View Placeholder"
+  },
+  "error" : {
+    "network" : {
+      "unkown" : {
+        "title" : "We’re sorry. An unknown server problem has occurred. ",
+        "message" : "Please try again later. "
+      },
+      "host" : {
+        "title" : "Unknown Host",
+        "message" : "%@"
+      },
+      "connection" : {
+        "title" : "No Internet Connection",
+        "message" : "It looks like you may have lost Internet connection. Please check your settings and try again."
+      },
+      "unsupported" : {
+        "title" : "Unsupported URL",
+        "message" : "%@"
+      },
+      "timeout" : {
+        "title" : "Slow Internet Connection",
+        "message" : "It looks like you may be experiencing a slow Internet connection. Please try again later."
+      },
+      "404" : {
+        "title" : "Not Found",
+        "message" : "“%@” could not be found."
+      }
+    }
+  },
+  "profile" : {
+    "title" : "Profile",
+    "edit" : {
+      "title" : "Edit Profile"
+    }
+  },
+  "options" : {
+    "about" : "About",
+    "profile" : "Profile",
+    "logout" : "Sign Out"
+  }
+}

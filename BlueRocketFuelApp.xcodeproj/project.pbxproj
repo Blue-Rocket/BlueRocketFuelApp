@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		290DA1001A79545700AF38D7 /* OptionsTray.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DA0FF1A79545700AF38D7 /* OptionsTray.m */; };
+		29116E941A6FFD0800E546DF /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29116E931A6FFD0800E546DF /* MainTableViewController.m */; };
+		29116EA61A7083B100E546DF /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29116EA51A7083B100E546DF /* LoginTableViewController.m */; };
+		291F58D41A719AA100075294 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291F58D11A719AA100075294 /* NavigationController.m */; };
+		291F58D51A719AA100075294 /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291F58D31A719AA100075294 /* StartupViewController.m */; };
+		29254B231A78037300978983 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 29254B221A78037300978983 /* Profile.m */; };
+		292B7C3E1A72D2CF0090B246 /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B7C3D1A72D2CF0090B246 /* About.m */; };
+		29334FC81A784F8D00CE6216 /* AppUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 29334FC71A784F8D00CE6216 /* AppUser.m */; };
+		29334FCB1A78547900CE6216 /* EditProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 29334FCA1A78547900CE6216 /* EditProfile.m */; };
+		297967BA1A6988DF00B7408B /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 297967B81A6988DF00B7408B /* config.json */; };
+		297967BB1A6988DF00B7408B /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 297967B91A6988DF00B7408B /* strings.json */; };
+		297967BF1A69937500B7408B /* BlueRocketFuelApp.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297967BD1A69937500B7408B /* BlueRocketFuelApp.xcconfig */; };
+		297967C01A69937500B7408B /* BlueRocketFuelAppStaging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297967BE1A69937500B7408B /* BlueRocketFuelAppStaging.xcconfig */; };
+		299B0D1C1A6ED01500A9B28E /* RegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299B0D1B1A6ED01500A9B28E /* RegisterTableViewController.m */; };
+		29E2E3401A683AE50048D0AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E2E33F1A683AE50048D0AB /* main.m */; };
+		29E2E3431A683AE50048D0AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E2E3421A683AE50048D0AB /* AppDelegate.m */; };
+		29E2E3491A683AE50048D0AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E2E3471A683AE50048D0AB /* Main.storyboard */; };
+		29E2E34B1A683AE50048D0AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E2E34A1A683AE50048D0AB /* Images.xcassets */; };
+		29E2E34E1A683AE50048D0AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29E2E34C1A683AE50048D0AB /* LaunchScreen.xib */; };
+		29E2E35A1A683AE50048D0AB /* BlueRocketFuelAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E2E3591A683AE50048D0AB /* BlueRocketFuelAppTests.m */; };
+		491E67691A8C406800B35F26 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 491E67681A8C406800B35F26 /* Podfile */; };
+		C574BDB5EA75E8B616AEF8CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A38C064F5985B2B8C5AD964C /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29E2E3541A683AE50048D0AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29E2E3321A683AE50048D0AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29E2E3391A683AE50048D0AB;
+			remoteInfo = BlueRocketFuelApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		29EBF2A91A81BF8300460642 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		290DA0FE1A79545700AF38D7 /* OptionsTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsTray.h; sourceTree = "<group>"; };
+		290DA0FF1A79545700AF38D7 /* OptionsTray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsTray.m; sourceTree = "<group>"; };
+		29116E921A6FFD0800E546DF /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		29116E931A6FFD0800E546DF /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		29116EA41A7083B100E546DF /* LoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableViewController.h; sourceTree = "<group>"; };
+		29116EA51A7083B100E546DF /* LoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewController.m; sourceTree = "<group>"; };
+		291F58D01A719AA100075294 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		291F58D11A719AA100075294 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		291F58D21A719AA100075294 /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
+		291F58D31A719AA100075294 /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
+		29254B211A78037300978983 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		29254B221A78037300978983 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		292B7C3C1A72D2CF0090B246 /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = About.h; sourceTree = "<group>"; };
+		292B7C3D1A72D2CF0090B246 /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = About.m; sourceTree = "<group>"; };
+		29334FC61A784F8D00CE6216 /* AppUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUser.h; sourceTree = "<group>"; };
+		29334FC71A784F8D00CE6216 /* AppUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUser.m; sourceTree = "<group>"; };
+		29334FC91A78547900CE6216 /* EditProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfile.h; sourceTree = "<group>"; };
+		29334FCA1A78547900CE6216 /* EditProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfile.m; sourceTree = "<group>"; };
+		297967B81A6988DF00B7408B /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		297967B91A6988DF00B7408B /* strings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strings.json; sourceTree = "<group>"; };
+		297967BD1A69937500B7408B /* BlueRocketFuelApp.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = BlueRocketFuelApp.xcconfig; sourceTree = "<group>"; };
+		297967BE1A69937500B7408B /* BlueRocketFuelAppStaging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = BlueRocketFuelAppStaging.xcconfig; sourceTree = "<group>"; };
+		297967C41A6998A900B7408B /* BlueRocketFuel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BlueRocketFuel.framework; path = "../../BlueRocketFuel/build/Debug-iphoneos/BlueRocketFuel.framework"; sourceTree = "<group>"; };
+		299B0D1A1A6ED01500A9B28E /* RegisterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTableViewController.h; sourceTree = "<group>"; };
+		299B0D1B1A6ED01500A9B28E /* RegisterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTableViewController.m; sourceTree = "<group>"; };
+		29E2E33A1A683AE50048D0AB /* BlueRocketFuelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueRocketFuelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E2E33E1A683AE50048D0AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29E2E33F1A683AE50048D0AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29E2E3411A683AE50048D0AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		29E2E3421A683AE50048D0AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		29E2E3481A683AE50048D0AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29E2E34A1A683AE50048D0AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		29E2E34D1A683AE50048D0AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		29E2E3531A683AE50048D0AB /* BlueRocketFuelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlueRocketFuelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E2E3581A683AE50048D0AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29E2E3591A683AE50048D0AB /* BlueRocketFuelAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueRocketFuelAppTests.m; sourceTree = "<group>"; };
+		491E67681A8C406800B35F26 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A38C064F5985B2B8C5AD964C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29E2E3371A683AE50048D0AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C574BDB5EA75E8B616AEF8CB /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29E2E3501A683AE50048D0AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		290DA0FD1A79545700AF38D7 /* OptionsTray */ = {
+			isa = PBXGroup;
+			children = (
+				290DA0FE1A79545700AF38D7 /* OptionsTray.h */,
+				290DA0FF1A79545700AF38D7 /* OptionsTray.m */,
+			);
+			path = OptionsTray;
+			sourceTree = "<group>";
+		};
+		29116E911A6FFCCE00E546DF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				29116E921A6FFD0800E546DF /* MainTableViewController.h */,
+				29116E931A6FFD0800E546DF /* MainTableViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		29116EA31A7083B100E546DF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				29116EA41A7083B100E546DF /* LoginTableViewController.h */,
+				29116EA51A7083B100E546DF /* LoginTableViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		29254B201A78036100978983 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				29254B211A78037300978983 /* Profile.h */,
+				29254B221A78037300978983 /* Profile.m */,
+				29334FC91A78547900CE6216 /* EditProfile.h */,
+				29334FCA1A78547900CE6216 /* EditProfile.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		292B7C3B1A72D2BC0090B246 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				292B7C3C1A72D2CF0090B246 /* About.h */,
+				292B7C3D1A72D2CF0090B246 /* About.m */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		296A6DE1DA03DCDAC87E1B69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A38C064F5985B2B8C5AD964C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		297967BC1A69937500B7408B /* xcconfigs */ = {
+			isa = PBXGroup;
+			children = (
+				297967BD1A69937500B7408B /* BlueRocketFuelApp.xcconfig */,
+				297967BE1A69937500B7408B /* BlueRocketFuelAppStaging.xcconfig */,
+			);
+			path = xcconfigs;
+			sourceTree = "<group>";
+		};
+		299B0D101A6ECED800A9B28E /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				291F58D01A719AA100075294 /* NavigationController.h */,
+				291F58D11A719AA100075294 /* NavigationController.m */,
+				291F58D21A719AA100075294 /* StartupViewController.h */,
+				291F58D31A719AA100075294 /* StartupViewController.m */,
+				299B0D191A6ED00800A9B28E /* Register */,
+				29116EA31A7083B100E546DF /* Login */,
+				29116E911A6FFCCE00E546DF /* Main */,
+				290DA0FD1A79545700AF38D7 /* OptionsTray */,
+				292B7C3B1A72D2BC0090B246 /* About */,
+				29254B201A78036100978983 /* Profile */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		299B0D191A6ED00800A9B28E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				299B0D1A1A6ED01500A9B28E /* RegisterTableViewController.h */,
+				299B0D1B1A6ED01500A9B28E /* RegisterTableViewController.m */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		29E2E3311A683AE50048D0AB = {
+			isa = PBXGroup;
+			children = (
+				491E67681A8C406800B35F26 /* Podfile */,
+				29E2E33C1A683AE50048D0AB /* BlueRocketFuelApp */,
+				297967B81A6988DF00B7408B /* config.json */,
+				297967B91A6988DF00B7408B /* strings.json */,
+				297967BC1A69937500B7408B /* xcconfigs */,
+				29E2E3561A683AE50048D0AB /* BlueRocketFuelAppTests */,
+				29E2E33B1A683AE50048D0AB /* Products */,
+				3710CA9A659BBCEE0065D196 /* Pods */,
+				296A6DE1DA03DCDAC87E1B69 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		29E2E33B1A683AE50048D0AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29E2E33A1A683AE50048D0AB /* BlueRocketFuelApp.app */,
+				29E2E3531A683AE50048D0AB /* BlueRocketFuelAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29E2E33C1A683AE50048D0AB /* BlueRocketFuelApp */ = {
+			isa = PBXGroup;
+			children = (
+				29E2E3411A683AE50048D0AB /* AppDelegate.h */,
+				29E2E3421A683AE50048D0AB /* AppDelegate.m */,
+				29334FC61A784F8D00CE6216 /* AppUser.h */,
+				29334FC71A784F8D00CE6216 /* AppUser.m */,
+				29E2E3471A683AE50048D0AB /* Main.storyboard */,
+				299B0D101A6ECED800A9B28E /* ui */,
+				29E2E34A1A683AE50048D0AB /* Images.xcassets */,
+				29E2E34C1A683AE50048D0AB /* LaunchScreen.xib */,
+				29E2E33D1A683AE50048D0AB /* Supporting Files */,
+			);
+			path = BlueRocketFuelApp;
+			sourceTree = "<group>";
+		};
+		29E2E33D1A683AE50048D0AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				297967C41A6998A900B7408B /* BlueRocketFuel.framework */,
+				29E2E33E1A683AE50048D0AB /* Info.plist */,
+				29E2E33F1A683AE50048D0AB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29E2E3561A683AE50048D0AB /* BlueRocketFuelAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				29E2E3591A683AE50048D0AB /* BlueRocketFuelAppTests.m */,
+				29E2E3571A683AE50048D0AB /* Supporting Files */,
+			);
+			path = BlueRocketFuelAppTests;
+			sourceTree = "<group>";
+		};
+		29E2E3571A683AE50048D0AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29E2E3581A683AE50048D0AB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3710CA9A659BBCEE0065D196 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29E2E3391A683AE50048D0AB /* BlueRocketFuelApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29E2E35D1A683AE50048D0AB /* Build configuration list for PBXNativeTarget "BlueRocketFuelApp" */;
+			buildPhases = (
+				9C79E25A4F9A906932D83CFE /* Check Pods Manifest.lock */,
+				29E2E3361A683AE50048D0AB /* Sources */,
+				29E2E3371A683AE50048D0AB /* Frameworks */,
+				29E2E3381A683AE50048D0AB /* Resources */,
+				29EBF2A91A81BF8300460642 /* Embed Frameworks */,
+				38932C367DE185D026FAFBC1 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlueRocketFuelApp;
+			productName = BlueRocketFuelApp;
+			productReference = 29E2E33A1A683AE50048D0AB /* BlueRocketFuelApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		29E2E3521A683AE50048D0AB /* BlueRocketFuelAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29E2E3601A683AE50048D0AB /* Build configuration list for PBXNativeTarget "BlueRocketFuelAppTests" */;
+			buildPhases = (
+				29E2E34F1A683AE50048D0AB /* Sources */,
+				29E2E3501A683AE50048D0AB /* Frameworks */,
+				29E2E3511A683AE50048D0AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29E2E3551A683AE50048D0AB /* PBXTargetDependency */,
+			);
+			name = BlueRocketFuelAppTests;
+			productName = BlueRocketFuelAppTests;
+			productReference = 29E2E3531A683AE50048D0AB /* BlueRocketFuelAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29E2E3321A683AE50048D0AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Blue Rocket";
+				TargetAttributes = {
+					29E2E3391A683AE50048D0AB = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					29E2E3521A683AE50048D0AB = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 29E2E3391A683AE50048D0AB;
+					};
+				};
+			};
+			buildConfigurationList = 29E2E3351A683AE50048D0AB /* Build configuration list for PBXProject "BlueRocketFuelApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 29E2E3311A683AE50048D0AB;
+			productRefGroup = 29E2E33B1A683AE50048D0AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29E2E3391A683AE50048D0AB /* BlueRocketFuelApp */,
+				29E2E3521A683AE50048D0AB /* BlueRocketFuelAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29E2E3381A683AE50048D0AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				297967BF1A69937500B7408B /* BlueRocketFuelApp.xcconfig in Resources */,
+				297967C01A69937500B7408B /* BlueRocketFuelAppStaging.xcconfig in Resources */,
+				491E67691A8C406800B35F26 /* Podfile in Resources */,
+				29E2E3491A683AE50048D0AB /* Main.storyboard in Resources */,
+				297967BA1A6988DF00B7408B /* config.json in Resources */,
+				29E2E34E1A683AE50048D0AB /* LaunchScreen.xib in Resources */,
+				29E2E34B1A683AE50048D0AB /* Images.xcassets in Resources */,
+				297967BB1A6988DF00B7408B /* strings.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29E2E3511A683AE50048D0AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38932C367DE185D026FAFBC1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C79E25A4F9A906932D83CFE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29E2E3361A683AE50048D0AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29254B231A78037300978983 /* Profile.m in Sources */,
+				291F58D41A719AA100075294 /* NavigationController.m in Sources */,
+				29334FCB1A78547900CE6216 /* EditProfile.m in Sources */,
+				29116EA61A7083B100E546DF /* LoginTableViewController.m in Sources */,
+				290DA1001A79545700AF38D7 /* OptionsTray.m in Sources */,
+				29116E941A6FFD0800E546DF /* MainTableViewController.m in Sources */,
+				29334FC81A784F8D00CE6216 /* AppUser.m in Sources */,
+				291F58D51A719AA100075294 /* StartupViewController.m in Sources */,
+				29E2E3431A683AE50048D0AB /* AppDelegate.m in Sources */,
+				292B7C3E1A72D2CF0090B246 /* About.m in Sources */,
+				29E2E3401A683AE50048D0AB /* main.m in Sources */,
+				299B0D1C1A6ED01500A9B28E /* RegisterTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29E2E34F1A683AE50048D0AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29E2E35A1A683AE50048D0AB /* BlueRocketFuelAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29E2E3551A683AE50048D0AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29E2E3391A683AE50048D0AB /* BlueRocketFuelApp */;
+			targetProxy = 29E2E3541A683AE50048D0AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		29E2E3471A683AE50048D0AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29E2E3481A683AE50048D0AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		29E2E34C1A683AE50048D0AB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29E2E34D1A683AE50048D0AB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		29D775761A7BD03400FE5FA9 /* DebugStaging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297967BE1A69937500B7408B /* BlueRocketFuelAppStaging.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = DebugStaging;
+		};
+		29D775771A7BD03400FE5FA9 /* DebugStaging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297967BE1A69937500B7408B /* BlueRocketFuelAppStaging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Workspace-bqzzlohfaqvulzcpuefuinajfbfb/Build/Products/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = BlueRocketFuelApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = DebugStaging;
+		};
+		29D775781A7BD03400FE5FA9 /* DebugStaging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297967BE1A69937500B7408B /* BlueRocketFuelAppStaging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BlueRocketFuelAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlueRocketFuelApp.app/BlueRocketFuelApp";
+			};
+			name = DebugStaging;
+		};
+		29E2E35B1A683AE50048D0AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297967BD1A69937500B7408B /* BlueRocketFuelApp.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29E2E35C1A683AE50048D0AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297967BD1A69937500B7408B /* BlueRocketFuelApp.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29E2E35E1A683AE50048D0AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297967BD1A69937500B7408B /* BlueRocketFuelApp.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Workspace-bqzzlohfaqvulzcpuefuinajfbfb/Build/Products/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = BlueRocketFuelApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		29E2E35F1A683AE50048D0AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297967BD1A69937500B7408B /* BlueRocketFuelApp.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Workspace-bqzzlohfaqvulzcpuefuinajfbfb/Build/Products/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = BlueRocketFuelApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		29E2E3611A683AE50048D0AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297967BD1A69937500B7408B /* BlueRocketFuelApp.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BlueRocketFuelAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlueRocketFuelApp.app/BlueRocketFuelApp";
+			};
+			name = Debug;
+		};
+		29E2E3621A683AE50048D0AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297967BD1A69937500B7408B /* BlueRocketFuelApp.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BlueRocketFuelAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlueRocketFuelApp.app/BlueRocketFuelApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29E2E3351A683AE50048D0AB /* Build configuration list for PBXProject "BlueRocketFuelApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29E2E35B1A683AE50048D0AB /* Debug */,
+				29D775761A7BD03400FE5FA9 /* DebugStaging */,
+				29E2E35C1A683AE50048D0AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29E2E35D1A683AE50048D0AB /* Build configuration list for PBXNativeTarget "BlueRocketFuelApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29E2E35E1A683AE50048D0AB /* Debug */,
+				29D775771A7BD03400FE5FA9 /* DebugStaging */,
+				29E2E35F1A683AE50048D0AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29E2E3601A683AE50048D0AB /* Build configuration list for PBXNativeTarget "BlueRocketFuelAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29E2E3611A683AE50048D0AB /* Debug */,
+				29D775781A7BD03400FE5FA9 /* DebugStaging */,
+				29E2E3621A683AE50048D0AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29E2E3321A683AE50048D0AB /* Project object */;
+}
