@@ -30,11 +30,11 @@ $TEMPLATE_DIR/strings.json \
 $TEMPLATE_DIR/Podfile \
 .
 
-sed -i s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/project.pbxproj
-sed -i s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/xcshareddata/xcschemes/BlueRocketFuelApp.xcscheme
-sed -i s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/xcshareddata/xcschemes/BlueRocketFuelAppStaging.xcscheme
-sed -i s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata
-sed -i s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelAppTests/BlueRocketFuelAppTests.m
+sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/project.pbxproj
+sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/xcshareddata/xcschemes/BlueRocketFuelApp.xcscheme
+sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/xcshareddata/xcschemes/BlueRocketFuelAppStaging.xcscheme
+sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelAppTests/BlueRocketFuelAppTests.m
 
 cd BlueRocketFuelApp.xcodeproj/xcshareddata/xcschemes/
 mv -f BlueRocketFuelApp.xcscheme "$PROJECT_NAME.xcscheme"
