@@ -18,9 +18,13 @@ sudo gem install cocoapods
 pod setup
 ```
 
-Once you have CocoaPods, simply clone this repository and run BlueRocketFuelApp/launchNewProject.sh MyProjectName
+Once you have CocoaPods, simply clone this repository and run:
 
-The script will create a new Xcode project using BlueRocketFuelApp as a template and initialize a git repository.
+```
+BlueRocketFuelApp/launchNewProject.sh MyProjectName
+```
+
+The script will create a new Xcode project using BlueRocketFuelApp as a template and initialize a new git repository.
 
 Adding Your Custom UI
 -----
