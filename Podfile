@@ -10,7 +10,7 @@ inhibit_all_warnings!
 # Conversely, if you used BlueRocketFuelApp as a starter for another project by running launchNewProject.sh, then your
 # current directory will be called something else. CocoaPods will then download BlueRocketFuelCore from github instead.
 if File.basename(Dir.pwd) == "BlueRocketFuelApp" then
-    # use local copy of BlueRocketFuelCore during framework development
+    # use local copy of BlueRocketFuelCore during framework development. In order to preserve source code folders as groups, you need CocoaPods >= 0.36
     pod 'BlueRocketFuelCore', :path => '../BlueRocketFuelCore'
 else
     # use latest BlueRocketFuelCore in remote repo
