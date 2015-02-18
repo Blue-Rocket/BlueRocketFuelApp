@@ -22,7 +22,7 @@
 //  THE SOFTWARE.
 //
 
-#import <BlueRocketFuel/BlueRocketFuel.h>
+#import <BlueRocketFuelCore/BlueRocketFuelCore.h>
 
 #import "RegisterTableViewController.h"
 

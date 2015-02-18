@@ -6,22 +6,30 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>520B7FEB-2800-4A88-869B-5907B8079831</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BlueRocketFuelApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>38B531724D49A90DFF8370B1267CDCFC04C65D0C</key>
+		<string>https://github.com/danflynn76/BlueRocketFuelApp.git</string>
 		<key>F9A2AA193E6EBEDD3220D72AE6C766EC1E4D2BC2</key>
 		<string>https://github.com/Blue-Rocket/BlueRocketFuel.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BlueRocketFuelApp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>38B531724D49A90DFF8370B1267CDCFC04C65D0C</key>
+		<string>../..</string>
 		<key>F9A2AA193E6EBEDD3220D72AE6C766EC1E4D2BC2</key>
-		<string>BlueRocketFuel/</string>
+		<string>../../../BlueRocketFuel</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Blue-Rocket/BlueRocketFuel.git</string>
+	<string>https://github.com/danflynn76/BlueRocketFuelApp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F9A2AA193E6EBEDD3220D72AE6C766EC1E4D2BC2</string>
+	<string>38B531724D49A90DFF8370B1267CDCFC04C65D0C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -31,6 +39,14 @@
 			<string>F9A2AA193E6EBEDD3220D72AE6C766EC1E4D2BC2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BlueRocketFuel</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>38B531724D49A90DFF8370B1267CDCFC04C65D0C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BlueRocketFuelApp</string>
 		</dict>
 	</array>
 </dict>
