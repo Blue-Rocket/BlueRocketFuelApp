@@ -1,0 +1,14 @@
+PODS:
+  - BlueRocketFuelCore (0.1)
+
+DEPENDENCIES:
+  - BlueRocketFuelCore (from `../BlueRocketFuelCore`)
+
+EXTERNAL SOURCES:
+  BlueRocketFuelCore:
+    :path: ../BlueRocketFuelCore
+
+SPEC CHECKSUMS:
+  BlueRocketFuelCore: c3c102185498d76b2208fde2a044f31cd0bf1d44
+
+COCOAPODS: 0.35.0
