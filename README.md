@@ -10,7 +10,7 @@ What Is it?
 
 Getting Started
 -----
-This project depends on the framework project **BlueRocketFuelCore**. It will be automatically installed by CocoaPods. If you don't already have CocoaPods, simply open a terminal window and enter the following commands (the last command will take quite some time):
+This project depends on the framework project **BlueRocketFuelCore**. It will be automatically installed by CocoaPods. If you don't already have CocoaPods, open a terminal window and enter the following commands (the last command will take quite some time):
 
 ```
 sudo gem update --system
