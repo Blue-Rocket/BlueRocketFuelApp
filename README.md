@@ -10,7 +10,14 @@ What Is it?
 
 Getting Started
 -----
-Clone this repository and run BlueRocketFuelApp/launchNewProject.sh MyProjectName
+This project depends on the framework project **BlueRocketFuelCore**. It will be automatically installed by CocoaPods. If you don't already have CocoaPods, simply open a terminal window and enter the following commands (the last command will take quite some time):
+sudo gem update --system
+sudo gem install cocoapods
+pod setup
+
+Once you have CocoaPods, simply clone this repository and run BlueRocketFuelApp/launchNewProject.sh MyProjectName
+
+The script will create a new Xcode project using BlueRocketFuelApp as a template and initialize a git repository.
 
 Adding Your Custom UI
 -----
@@ -18,7 +25,7 @@ All UI is located in main storyboard (**Main.storyboard**) using adaptive layout
 
 Localization Support
 ------
-Blue Rocket Fuel provides a unique for localizing your UI directly in the Main.storyboard. Simply place and organize all your localizable strings in "**strings.json**" JSON file included in the App project folder. Then reference those strings in your button titles, navigation item titles, label text, and other UI elements by enclosing the string's JSON object path in curly brackets ({}).
+Blue Rocket Fuel provides a unique method for localizing your UI directly in the Main.storyboard. Simply place and organize all your localizable strings in "**strings.json**" JSON file included in the project. Then reference those strings in your button titles, navigation item titles, label text, and other UI elements by enclosing the string's JSON object path in curly brackets ({}).
 
 See, for example, the view controller provided for the About view. Notice it references three strings for the navigation bar title ("{about.tile}"), the label that displays the app name ("{about.name}"), and the label that displays the app description ("{about.text}"). You will find each of these already included in the strings.json file.
 
@@ -50,4 +57,4 @@ For end points that not only require an authenticated user token to access, but 
 
 
 ----
-See the code in both the App and BlueRocketFuel projects as examples, and to learn more. See the Ping, Register, Login, and Profile endpoint classes provided in the BlueRocketFuel framework project for examples of creating end point subclasses.
+See the code in both the BlueRocketFuelApp and BlueRocketFuelCore projects as examples, and to learn more. See the Ping, Register, Login, and Profile endpoint classes provided in the BlueRocketFuelCore project for examples of creating end point subclasses.
