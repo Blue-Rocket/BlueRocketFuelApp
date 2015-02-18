@@ -54,7 +54,7 @@ rm -rf xcuserdata
 rm -rf project.xcworkspace/xcuserdata
 
 echo
-echo "Configuring BlueRocketFuel framework as a CocoaPod..."
+echo "Configuring BlueRocketFuelCore as a CocoaPod..."
 
 cd "$PROJECT_DIR"
 pod install
@@ -64,7 +64,7 @@ echo "Initializing git repository and performing initial commit..."
 
 git init
 git add --all
-git commit -am "Initial Commit using BlueRocketFuel starter app."
+git commit -am "Initial Commit using BlueRocketFuelApp starter app."
 
 echo "Your new app is ready to go.  Always use $PROJECT_NAME.xcworkspace to open the project."
 

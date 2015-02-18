@@ -6,11 +6,8 @@ inhibit_all_warnings!
 # use local copy of BlueRocketFuelCore
 #pod 'BlueRocketFuelCore', :path => '~/Documents/XcodeProjects/BlueRocketFuelCore'
 
-# use BRF in forked repo
-#pod 'BlueRocketFuelCore', :git => 'https://github.com/danflynn76/BlueRocketFuelCore.git'
-
-# use BRF in official repo
-pod 'BlueRocketFuelCore', :git => 'https://github.com/Blue-Rocket/BlueRocketFuelCore.git'
+# use BRF in remote repo
+pod 'BlueRocketFuelCore', :git => 'https://github.com/Blue-Rocket/BlueRocketFuelCore.git', :tag => '0.1'
 
 # use BRF registered with CocoaPods
-#pod 'BlueRocketFuelCore', '~> 0.0.1'
+#pod 'BlueRocketFuelCore', '~> 0.1'
