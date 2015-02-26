@@ -25,26 +25,85 @@
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
 
 #import "OptionsTray.h"
+#import "OptionsTrayCell.h"
+#import "AppDelegate.h"
 #import "NavigationController.h"
 
+@interface OptionsTray ()
+
+@property(nonatomic, strong) IBOutlet UITableView *optionsTable;
+@property(nonatomic, strong) NSArray *optionsArray;
+
+@end
+
 @implementation OptionsTray
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.optionsTable.rowHeight = 44;
+    self.optionsArray = appDelegate.config[@"optionsTray"];
+}
+
+#pragma mark - UITableView methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.optionsArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    OptionsTrayCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OptionsTrayCell"];
+    
+    cell.optionLabel.text = self.optionsArray[indexPath.row][@"title"];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary *optionProperties = self.optionsArray[indexPath.row];
+    
+    if ([optionProperties[@"resourceType"] isEqualToString:@"storyboard"]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:optionProperties[@"resourceName"] bundle:nil];
+        UIViewController *vc = [sb instantiateInitialViewController];
+        
+        // If the storyboard has a nav controller as the initial controller, then grab its root vc instead.
+        if ([vc isKindOfClass:[UINavigationController class]]) {
+            vc = ((UINavigationController *)vc).viewControllers[0];
+        }
+        
+        [self hideWithCompletion:^{
+            AppNavigationController.viewControllers = [NSArray arrayWithObject:vc];
+        }];
+        
+    } else if ([optionProperties[@"resourceType"] isEqualToString:@"xib"]) {
+        NSString *nibName = optionProperties[@"resourceName"];
+        UIViewController *vc = [[NSClassFromString(nibName) alloc] initWithNibName:nibName bundle:nil];
+        
+        [self hideWithCompletion:^{
+            AppNavigationController.viewControllers = [NSArray arrayWithObject:vc];
+        }];
+    } else if ([optionProperties[@"resourceType"] isEqualToString:@"class"]) {
+        NSString *className = optionProperties[@"resourceName"];
+        UIViewController *vc = [[NSClassFromString(className) alloc] init];
+        
+        [self hideWithCompletion:^{
+            AppNavigationController.viewControllers = [NSArray arrayWithObject:vc];
+        }];
+    }
+}
 
 #pragma mark - Custom Actions
 
 // Add all custom IBAction handlers for the options tray here. Controller UI is configured in the main storyboard...
 
-- (IBAction)showProfile {
+// Overridding
+- (void)hide {
     [self hideWithCompletion:^{
-        [AppNavigationController showProfile];
+        // Call this to refresh the reference to OptionsTray within the menu button in the case the user dismisses tray without choosing a different vc.
+        [AppNavigationController.viewControllers[0] viewWillAppear:NO];
     }];
 }
-
-- (IBAction)showAbout {
-    [self hideWithCompletion:^{
-        [AppNavigationController showAbout];
-    }];
-}
-
 
 - (IBAction)logOut {
     [self hideWithCompletion:^{

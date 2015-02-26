@@ -24,6 +24,8 @@
 
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
 
+#define appDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
 @interface AppDelegate : BRAppDelegate <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

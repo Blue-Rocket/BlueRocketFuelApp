@@ -22,3 +22,6 @@ else
     # use BlueRocketFuelCore registered with CocoaPods
     #pod 'BlueRocketFuelCore', '~> 0.1'
 end
+
+# Additional pods listed here
+pod 'BlocksKit', '~> 2.2.5'
