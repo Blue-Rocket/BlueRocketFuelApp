@@ -63,30 +63,27 @@
     
     NSDictionary *optionProperties = self.optionsArray[indexPath.row];
     
+    UIViewController *vc = nil;
+    
     if ([optionProperties[@"resourceType"] isEqualToString:@"storyboard"]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:optionProperties[@"resourceName"] bundle:nil];
-        UIViewController *vc = [sb instantiateInitialViewController];
+        vc = [sb instantiateInitialViewController];
         
         // If the storyboard has a nav controller as the initial controller, then grab its root vc instead.
         if ([vc isKindOfClass:[UINavigationController class]]) {
             vc = ((UINavigationController *)vc).viewControllers[0];
         }
         
-        [self hideWithCompletion:^{
-            AppNavigationController.viewControllers = [NSArray arrayWithObject:vc];
-        }];
-        
     } else if ([optionProperties[@"resourceType"] isEqualToString:@"xib"]) {
         NSString *nibName = optionProperties[@"resourceName"];
-        UIViewController *vc = [[NSClassFromString(nibName) alloc] initWithNibName:nibName bundle:nil];
-        
-        [self hideWithCompletion:^{
-            AppNavigationController.viewControllers = [NSArray arrayWithObject:vc];
-        }];
+        vc = [[NSClassFromString(nibName) alloc] initWithNibName:nibName bundle:nil];
+
     } else if ([optionProperties[@"resourceType"] isEqualToString:@"class"]) {
         NSString *className = optionProperties[@"resourceName"];
-        UIViewController *vc = [[NSClassFromString(className) alloc] init];
-        
+        vc = [[NSClassFromString(className) alloc] init];
+    }
+    
+    if (vc) {
         [self hideWithCompletion:^{
             AppNavigationController.viewControllers = [NSArray arrayWithObject:vc];
         }];
