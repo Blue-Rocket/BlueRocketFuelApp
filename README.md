@@ -28,11 +28,13 @@ The script will create a new Xcode project using BlueRocketFuelApp as a template
 
 Adding Your Custom UI
 -----
-All UI is located in main storyboard (**Main.storyboard**) using adaptive layout. You will find all the starting views and view controllers for providing the core login and registration functionality here, and is intended to be easily extended for your own app. Look in these view controller classes for examples on how to use the Web Service request and response networking classes.
+Most of the UI is located in main storyboard (**Main.storyboard**) using adaptive layout. You will find all the starting views and view controllers for providing the core login and registration functionality here, and is intended to be easily extended for your own app. Look in these view controller classes for examples on how to use the Web Service request and response networking classes.
+
+Navigation between unrelated areas of the app is handled by a custom tray style menu. Items to be displayed in the menu should be listed in config.json. There you can specify the text to be displayed in the menu and also the method that the app should use to instantiate the view controller being selected by the user. Available methods are "storyboard", "xib", or plain old "class". See config.json for examples.
 
 Localization Support
 ------
-Blue Rocket Fuel provides a unique method for localizing your UI directly in the Main.storyboard. Simply place and organize all your localizable strings in "**strings.json**" JSON file included in the project. Then reference those strings in your button titles, navigation item titles, label text, and other UI elements by enclosing the string's JSON object path in curly brackets ({}).
+Blue Rocket Fuel provides a unique method for localizing your UI directly in storyboards and nibs. Simply place and organize all your localizable strings in "**strings.json**" JSON file included in the project. Then reference those strings in your button titles, navigation item titles, label text, and other UI elements by enclosing the string's JSON object path in curly brackets ({}).
 
 See, for example, the view controller provided for the About view. Notice it references three strings for the navigation bar title ("{about.tile}"), the label that displays the app name ("{about.name}"), and the label that displays the app description ("{about.text}"). You will find each of these already included in the strings.json file.
 
