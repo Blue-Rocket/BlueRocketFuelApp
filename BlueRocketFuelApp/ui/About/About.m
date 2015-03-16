@@ -25,6 +25,7 @@
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
 
 #import "About.h"
+#import "NavigationController.h"
 
 @interface About ()
 @property (nonatomic, strong) IBOutlet UILabel *appVersionLabel;
@@ -36,6 +37,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem = [AppNavigationController optionsTrayBarButtonForController:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

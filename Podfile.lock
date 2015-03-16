@@ -1,7 +1,23 @@
 PODS:
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
   - BlueRocketFuelCore (0.1)
 
 DEPENDENCIES:
+  - BlocksKit (~> 2.2.5)
   - BlueRocketFuelCore (from `../BlueRocketFuelCore`)
 
 EXTERNAL SOURCES:
@@ -9,6 +25,7 @@ EXTERNAL SOURCES:
     :path: ../BlueRocketFuelCore
 
 SPEC CHECKSUMS:
-  BlueRocketFuelCore: c3c102185498d76b2208fde2a044f31cd0bf1d44
+  BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  BlueRocketFuelCore: bd1fc65fad50cad8d8df1a0df366da6db2a4f17c
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.0.beta.2

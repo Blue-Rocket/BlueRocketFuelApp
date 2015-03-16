@@ -23,7 +23,7 @@
 //
 
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
-
+#import <BlocksKit/BlocksKit+UIKit.h>
 #import <UIKit/UIKit.h>
 
 #define AppNavigationController [NavigationController sharedInstance]
@@ -32,8 +32,7 @@
 
 + (NavigationController *)sharedInstance;
 
-- (void)showAbout;
-- (void)showProfile;
+- (UIBarButtonItem *)optionsTrayBarButtonForController:(UIViewController *)vc;
 - (void)logOut;
 
 @end

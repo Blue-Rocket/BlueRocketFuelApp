@@ -22,5 +22,22 @@
         "path" : "users"
       }
     }
-  }
+  },
+    "optionsTray" : [
+                     {
+                     "title" : "Main",
+                     "resourceName" : "Main",
+                     "resourceType" : "storyboard"
+                     },
+                     {
+                     "title" : "Profile",
+                     "resourceName" : "Profile",
+                     "resourceType" : "storyboard"
+                     },
+                     {
+                     "title" : "About",
+                     "resourceName" : "About",
+                     "resourceType" : "xib"
+                     }
+                     ]
 }

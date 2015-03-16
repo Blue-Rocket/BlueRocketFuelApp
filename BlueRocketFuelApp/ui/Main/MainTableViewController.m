@@ -25,10 +25,10 @@
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
 
 #import "MainTableViewController.h"
-#import "OptionsTray.h"
+#import "NavigationController.h"
 
 @interface MainTableViewController ()
-@property (nonatomic, strong) OptionsTray *optionsTrayViewController;
+
 @end
 
 @implementation MainTableViewController
@@ -41,6 +41,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    self.navigationItem.leftBarButtonItem = [AppNavigationController optionsTrayBarButtonForController:self];
+    
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
@@ -53,11 +56,6 @@
 }
 
 #pragma mark - Actions
-
-- (IBAction)showOptions:(id)sender {
-    self.optionsTrayViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"optionsTray"];
-    [self.optionsTrayViewController showForViewController:self];
-}
 
 - (IBAction)add:(id)sender {
     // TODO:

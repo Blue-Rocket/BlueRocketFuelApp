@@ -25,6 +25,7 @@
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
 
 #import "Profile.h"
+#import "NavigationController.h"
 
 @interface Profile ()
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
@@ -35,6 +36,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    self.navigationItem.leftBarButtonItem = [AppNavigationController optionsTrayBarButtonForController:self];
     
     // display any local profile data we have first, before we
     // try to go out to the web service and get the data stored there...

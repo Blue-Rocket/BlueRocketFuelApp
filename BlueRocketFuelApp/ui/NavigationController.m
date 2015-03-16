@@ -25,6 +25,7 @@
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
 
 #import "NavigationController.h"
+#import "OptionsTray.h"
 
 static NavigationController *sharedInstance;
 
@@ -39,15 +40,17 @@ static NavigationController *sharedInstance;
     sharedInstance = self;
 }
 
-- (void)showAbout {
-    [self performSegueWithIdentifier:@"about" sender:self];
+- (UIBarButtonItem *)optionsTrayBarButtonForController:(UIViewController *)vc {
+    
+    OptionsTray *optionsTrayViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"optionsTray"];
+    
+    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks
+                                                                                  handler:^(id sender) {
+                                                                                      [optionsTrayViewController showForViewController:vc];
+                                                                                  }];
+
+    return menuButton;
 }
-
-
-- (void)showProfile {
-    [self performSegueWithIdentifier:@"profile" sender:self];
-}
-
 
 - (void)logOut {
     [CurrentAppUser clear];
