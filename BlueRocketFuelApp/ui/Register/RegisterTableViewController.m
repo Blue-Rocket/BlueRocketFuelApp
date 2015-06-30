@@ -25,6 +25,12 @@
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
 
 #import "RegisterTableViewController.h"
+#import "UIColor+App.h"
+#import "UIButton+App.h"
+#import "EditProfile.h"
+#import "Profile.h"
+#import "NavigationController.h"
+#import "AlertController.h"
 
 @interface RegisterTableViewController () <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
@@ -40,6 +46,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor registrationBackgroundColor];
+    
     // necessary to avoid an autolayout contraint warning on the table cells...
     self.tableView.rowHeight = 44;
 }
@@ -49,11 +57,32 @@
     
     // depending on the specific design of the app being built,
     // hide or show the navigation bar...
-    [self.navigationController setNavigationBarHidden:YES];
+    //[self.navigationController setNavigationBarHidden:YES];
+    
+    UIColor *fieldColor = [UIColor registrationFieldColor];
+    UIColor *placeholderColor = [[UIColor registrationFieldColor] colorWithAlphaComponent:0.25];
+    UIColor *separatorColor = [[UIColor registrationFieldColor] colorWithAlphaComponent:0.25];
+    
+    self.nameField.textColor = fieldColor;
+    [self.nameField setPlaceholderColor:placeholderColor];
+    [self.nameField addBottomBorderWithColor:separatorColor];
+    
+    self.emailField.textColor = fieldColor;
+    [self.emailField setPlaceholderColor:placeholderColor];
+    [self.emailField addBottomBorderWithColor:separatorColor];
+    
+    self.passwordField.textColor = fieldColor;
+    [self.passwordField setPlaceholderColor:placeholderColor];
+    [self.passwordField addBottomBorderWithColor:separatorColor];
+    
+    self.confirmPasswordField.textColor = fieldColor;
+    [self.confirmPasswordField setPlaceholderColor:placeholderColor];
+    [self.confirmPasswordField addBottomBorderWithColor:separatorColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     
     // uncomment this if you would like to bring up the keyboard and have the name field
     // ready to be entered as a convenience to the user. we're not doing
@@ -64,15 +93,9 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    // User shouldn't be allowed to return to this view once registration is successful,
-    // so hide the back button...
-    
-    ((UIViewController *)segue.destinationViewController).navigationItem.hidesBackButton = YES;
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:nil
-                                                                            action:nil];
+    if ([segue.identifier isEqualToString:@"profile"]) {
+        EditProfile *vc = (EditProfile *)segue.destinationViewController;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,35 +105,85 @@
 
 #pragma mark - Submitting Registration
 
+static const NSString *emailAddressError = @"email";
+static const NSString *passwordError = @"password";
+static const NSString *usernameError = @"username";
+
+static const NSInteger registrationErrorCode = 422;
+
 - (IBAction)submit {
     if ([self validated]) {
         [[BRWebServiceRequest requestForAPI:@"register" parameters:@{@"user": @{
                                                                              @"email": self.emailField.text,
-                                                                             @"name": self.nameField.text,
+                                                                             @"username": self.nameField.text,
                                                                              @"password": self.passwordField.text,
                                                                              @"password_confirmation": self.confirmPasswordField.text
                                                                              }
                                                                      }]
          beginWithCompletion:^(BRWebServiceResponse *response) {
-             BRInfoLog(@":::: %@",response.JSONDictionary);
              [CurrentAppUser initializeWithDictionary:response.JSONDictionary];
-             [self performSegueWithIdentifier:@"main" sender:self];
+             [self performSegueWithIdentifier:@"profile" sender:self];
          } failure:^(NSError *error, NSInteger code) {
              switch (code) {
-                 case 422:
-                     [[[UIAlertView alloc]
-                       initWithTitle:[@"{register.error.invalid.title}" localizedString]
-                       message:[@"{register.error.invalid.body}" localizedString]
-                       delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-                      show];
+                 case registrationErrorCode: {
+                     NSDictionary *userInfo = error.userInfo;
+                     if ([userInfo objectForKey:emailAddressError]) {
+                         NSArray *messages = [userInfo objectForKey:emailAddressError];
+                         NSString *messageText = [self buildMessageErrorTextWithTitle:@"Email Address"
+                                                                          andMessages:messages];
+                         [self raiseAlertOnMainThreadWithTitle:@"Invalid Email Address"
+                                                    andMessage:messageText];
+                     } else if ([userInfo objectForKey:passwordError]) {
+                         NSArray *messages = [userInfo objectForKey:passwordError];
+                         NSString *messageText = [self buildMessageErrorTextWithTitle:@"Password"
+                                                                          andMessages:messages];
+                         [self raiseAlertOnMainThreadWithTitle:@"Invalid Password"
+                                                    andMessage:messageText];
+                     } else if ([userInfo objectForKey:usernameError]) {
+                         NSArray *messages = [userInfo objectForKey:usernameError];
+                         NSString *messageText = [self buildMessageErrorTextWithTitle:@"Username"
+                                                                          andMessages:messages];
+                         [self raiseAlertOnMainThreadWithTitle:@"Username already taken"
+                                                    andMessage:messageText];
+
+                     }
+                     else {
+                         [self raiseAlertOnMainThreadWithTitle:@"Error Occurred"
+                                                    andMessage:@"Please check your data and try again."];
+                     }
                      break;
-                     
+                 }
                  default:
-                     BRToDo(@"Implement error handling.");
+                     [self raiseAlertOnMainThreadWithTitle:@"Error Occurred"
+                                                andMessage:@"Please check your data and try again."];
                      break;
              }
          }];
     }
+}
+-(NSString*)buildMessageErrorTextWithTitle:(NSString*)title andMessages:(NSArray*)messages
+{
+    NSString *messageText = @"";
+    if (messages) {
+        messageText = title;
+        for (NSString *errorMessage in messages) {
+            messageText = [NSString stringWithFormat:@"%@ %@\n",messageText, errorMessage];
+        }
+    }
+    return messageText;
+}
+
+-(void)raiseAlertOnMainThreadWithTitle:(NSString*)title andMessage:(NSString*)message
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        AlertController *alert = [AlertController alertControllerWithTitle:title
+                                  
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        [AppNavigationController presentViewController:alert animated:YES completion:nil];
+    });
 }
 
 - (BOOL)validated {
@@ -119,61 +192,67 @@
     self.emailField.text = [self.emailField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if (!self.nameField.text.length) {
-        [[[UIAlertView alloc]
-          initWithTitle:[@"{register.error.name.title}" localizedString]
-          message:[@"{register.error.name.body}" localizedString]
-          delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-         show];
+        AlertController *alert = [AlertController alertControllerWithTitle:[@"{register.error.username.title}" localizedString]
+                                                                   message:[@"{register.error.username.body}" localizedString]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        [AppNavigationController presentViewController:alert animated:YES completion:nil];
         [self.nameField becomeFirstResponder];
         return NO;
     }
     
     if (!self.emailField.text.length) {
-        [[[UIAlertView alloc]
-          initWithTitle:[@"{register.error.email.missing.title}" localizedString]
-          message:[@"{register.error.email.missing.body}" localizedString]
-          delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-         show];
+        AlertController *alert = [AlertController alertControllerWithTitle:[@"{register.error.email.missing.title}" localizedString]
+                                                                   message:[@"{register.error.email.missing.body}" localizedString]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        [AppNavigationController presentViewController:alert animated:YES completion:nil];
         [self.emailField becomeFirstResponder];
         return NO;
     }
     
     if (![self.emailField.text isValidEmailFormat]) {
-        [[[UIAlertView alloc]
-          initWithTitle:[@"{register.error.email.format.title}" localizedString]
-          message:[@"{register.error.email.format.body}" localizedString]
-          delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-         show];
+        AlertController *alert = [AlertController alertControllerWithTitle:[@"{register.error.email.format.title}" localizedString]
+                                                                   message:[@"{register.error.email.format.body}" localizedString]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        [AppNavigationController presentViewController:alert animated:YES completion:nil];
         [self.emailField becomeFirstResponder];
         return NO;
     }
     
     if (!self.passwordField.text.length) {
-        [[[UIAlertView alloc]
-          initWithTitle:[@"{register.error.password.missing.title}" localizedString]
-          message:[@"{register.error.password.missing.body}" localizedString]
-          delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-         show];
+        AlertController *alert = [AlertController alertControllerWithTitle:[@"{register.error.password.missing.title}" localizedString]
+                                                                   message:[@"{register.error.password.missing.body}" localizedString]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        [AppNavigationController presentViewController:alert animated:YES completion:nil];
         [self.passwordField becomeFirstResponder];
         return NO;
     }
     
     if (!self.confirmPasswordField.text.length) {
-        [[[UIAlertView alloc]
-          initWithTitle:[@"{register.error.password.confirm.title}" localizedString]
-          message:[@"{register.error.password.confirm.body}" localizedString]
-          delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-         show];
+        AlertController *alert = [AlertController alertControllerWithTitle:[@"{register.error.password.confirm.title}" localizedString]
+                                                                   message:[@"{register.error.password.confirm.body}" localizedString]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        [AppNavigationController presentViewController:alert animated:YES completion:nil];
         [self.confirmPasswordField becomeFirstResponder];
         return NO;
     }
     
     if (![self.passwordField.text isEqualToString:self.confirmPasswordField.text]) {
-        [[[UIAlertView alloc]
-          initWithTitle:[@"{register.error.password.match.title}" localizedString]
-          message:[@"{register.error.password.match.body}" localizedString]
-          delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-         show];
+        AlertController *alert = [AlertController alertControllerWithTitle:[@"{register.error.password.match.title}" localizedString]
+                                                                   message:[@"{register.error.password.match.body}" localizedString]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        [AppNavigationController presentViewController:alert animated:YES completion:nil];
         [self.passwordField becomeFirstResponder];
         return NO;
     }
@@ -202,7 +281,6 @@
                      }
      ];
 }
-
 
 #pragma mark - UITextFieldDelegate Implementaton
 

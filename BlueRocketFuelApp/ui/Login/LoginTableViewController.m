@@ -25,10 +25,15 @@
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
 
 #import "LoginTableViewController.h"
+#import "UIColor+App.h"
+#import "UIButton+App.h"
+#import "NavigationController.h"
+#import "AlertController.h"
 
 @interface LoginTableViewController () <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *usernameField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
+@property (nonatomic, weak) IBOutlet UIButton *submitButton;
 @end
 
 @implementation LoginTableViewController
@@ -37,6 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor loginBackgroundColor];
     
     // necessary to avoid an autolayout contraint warning on the table cells...
     self.tableView.rowHeight = 44;
@@ -47,11 +54,26 @@
     
     // depending on the specific design of the app being built,
     // hide or show the navigation bar...
-    [self.navigationController setNavigationBarHidden:YES];
+    //[self.navigationController setNavigationBarHidden:YES];
+    [self.submitButton addButtonShape];
+    
+    UIColor *fieldColor = [UIColor loginFieldColor];
+    UIColor *placeholderColor = [[UIColor loginFieldColor] colorWithAlphaComponent:0.25];
+    UIColor *separatorColor = [[UIColor loginFieldColor] colorWithAlphaComponent:0.25];
+    
+    
+    self.usernameField.textColor = fieldColor;
+    [self.usernameField setPlaceholderColor:placeholderColor];
+    [self.usernameField addBottomBorderWithColor:separatorColor];
+    
+    self.passwordField.textColor = fieldColor;
+    [self.passwordField setPlaceholderColor:placeholderColor];
+    [self.passwordField addBottomBorderWithColor:separatorColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     
     // bring up the keyboard and have the username field
     // ready to be entered as a convenience to the user...
@@ -62,12 +84,13 @@
     
     // User shouldn't be allowed to return to this view once sign-in is successful,
     // so hide the back button...
-    
-    ((UIViewController *)segue.destinationViewController).navigationItem.hidesBackButton = YES;
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+    if (![segue.identifier isEqualToString:@"register"]) {
+        ((UIViewController *)segue.destinationViewController).navigationItem.hidesBackButton = YES;
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:nil
                                                                         action:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,13 +111,15 @@
              [self performSegueWithIdentifier:@"main" sender:self];
          } failure:^(NSError *error, NSInteger code) {
              switch (code) {
-                 case 422:
-                     [[[UIAlertView alloc]
-                       initWithTitle:[@"{login.error.invalid.title}" localizedString]
-                       message:[@"{login.error.invalid.body}" localizedString]
-                       delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-                      show];
-                     break;
+                 case 422:{
+                     AlertController *alert = [AlertController alertControllerWithTitle:[@"{login.error.invalid.title}" localizedString]
+                                               
+                                                                                message:[@"{login.error.invalid.body}" localizedString]
+                                                                         preferredStyle:UIAlertControllerStyleAlert];
+                     [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                     }]];
+                     [AppNavigationController presentViewController:alert animated:YES completion:nil];
+                     break;}
                      
                  default:
                      BRToDo(@"Implement error handling.");
@@ -108,21 +133,25 @@
     self.usernameField.text = [self.usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 
     if (!self.usernameField.text.length) {
-        [[[UIAlertView alloc]
-          initWithTitle:[@"{login.error.username.title}" localizedString]
-          message:[@"{login.error.username.body}" localizedString]
-          delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-         show];
+        AlertController *alert = [AlertController alertControllerWithTitle:[@"{login.error.username.title}" localizedString]
+                                                                   message:[@"{login.error.username.body}" localizedString]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        [AppNavigationController presentViewController:alert animated:YES completion:nil];
         [self.usernameField becomeFirstResponder];
         return NO;
     }
     
     if (!self.passwordField.text.length) {
-        [[[UIAlertView alloc]
-          initWithTitle:[@"{login.error.password.title}" localizedString]
-          message:[@"{login.error.password.body}" localizedString]
-          delegate:nil cancelButtonTitle:[@"{button.ok}" localizedString] otherButtonTitles:nil]
-         show];
+        AlertController *alert = [AlertController alertControllerWithTitle:[@"{login.error.password.title}" localizedString]
+                                                                   message:[@"{login.error.password.body}" localizedString]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        [AppNavigationController presentViewController:alert animated:YES completion:nil];
+        [self.usernameField becomeFirstResponder];
+
         [self.passwordField becomeFirstResponder];
         return NO;
     }
@@ -138,6 +167,7 @@
                          self.navigationController.view.alpha = 0.0;
                      }
                      completion:^(BOOL finished) {
+                         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
                          [self performSegueWithIdentifier:@"register" sender:self];
                          [UIView animateWithDuration:0.25
                                                delay:0
@@ -152,6 +182,55 @@
      ];
 }
 
+- (IBAction)resetPassword:(id)sender {
+    AlertController *alert = [AlertController alertControllerWithTitle:@"Reset Password" message:@"Please enter the email address\nyou registered with:" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.keyboardType = UIKeyboardTypeEmailAddress;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    }];
+    
+    [alert addAction: [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UITextField *textField = alert.textFields[0];
+        BRInfoLog(@"email: %@", textField.text);
+        [self resetPasswordForEmail:textField.text];
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)resetPasswordForEmail:(NSString *)email {
+    [[BRWebServiceRequest requestForAPI:@"resetPassword" parameters:@{@"email": email
+                                                                      }]
+     beginWithCompletion:^(BRWebServiceResponse *response) {
+         AlertController *alert = [AlertController alertControllerWithTitle:[@"Request Sent" localizedString]
+                                                                    message:[@"Check your email for instructions on how to set a new password." localizedString]
+                                                             preferredStyle:UIAlertControllerStyleAlert];
+         [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+         }]];
+         [AppNavigationController presentViewController:alert animated:YES completion:nil];
+     } failure:^(NSError *error, NSInteger code) {
+         switch (code) {
+             case 422:{
+                 AlertController *alert = [AlertController alertControllerWithTitle:[@"{login.error.invalid.title}" localizedString]
+                                           
+                                                                            message:[@"{login.error.invalid.body}" localizedString]
+                                                                     preferredStyle:UIAlertControllerStyleAlert];
+                 [alert addAction:[UIAlertAction actionWithTitle:[@"{button.ok}" localizedString] style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                 }]];
+                 [AppNavigationController presentViewController:alert animated:YES completion:nil];
+                 break;}
+                 
+             default:
+                 BRToDo(@"Implement error handling.");
+                 break;
+         }
+     }];
+    
+}
 
 #pragma mark - UITextFieldDelegate Implementaton
 

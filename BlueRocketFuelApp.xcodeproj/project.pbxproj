@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290AB3021B42EB470088EA30 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290AB3011B42EB470088EA30 /* AlertController.m */; };
+		290AB30C1B42ED800088EA30 /* UIColor+App.m in Sources */ = {isa = PBXBuildFile; fileRef = 290AB3091B42ED800088EA30 /* UIColor+App.m */; };
+		290AB30D1B42ED800088EA30 /* UIFont+App.m in Sources */ = {isa = PBXBuildFile; fileRef = 290AB30B1B42ED800088EA30 /* UIFont+App.m */; };
+		290AB3101B42EE3A0088EA30 /* UIButton+App.m in Sources */ = {isa = PBXBuildFile; fileRef = 290AB30F1B42EE3A0088EA30 /* UIButton+App.m */; };
 		290DA1001A79545700AF38D7 /* OptionsTray.m in Sources */ = {isa = PBXBuildFile; fileRef = 290DA0FF1A79545700AF38D7 /* OptionsTray.m */; };
 		29116E941A6FFD0800E546DF /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29116E931A6FFD0800E546DF /* MainTableViewController.m */; };
 		29116EA61A7083B100E546DF /* LoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29116EA51A7083B100E546DF /* LoginTableViewController.m */; };
@@ -27,6 +31,9 @@
 		29E2E34B1A683AE50048D0AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E2E34A1A683AE50048D0AB /* Images.xcassets */; };
 		29E2E34E1A683AE50048D0AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29E2E34C1A683AE50048D0AB /* LaunchScreen.xib */; };
 		29E2E35A1A683AE50048D0AB /* BlueRocketFuelAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E2E3591A683AE50048D0AB /* BlueRocketFuelAppTests.m */; };
+		29FE3E9B1B42F4D100871098 /* BRFIntroSlideshow.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FE3E971B42F4D100871098 /* BRFIntroSlideshow.m */; };
+		29FE3E9C1B42F4D100871098 /* BRFIntroSlideshow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FE3E981B42F4D100871098 /* BRFIntroSlideshow.storyboard */; };
+		29FE3E9D1B42F4D100871098 /* onboarding.json in Resources */ = {isa = PBXBuildFile; fileRef = 29FE3E9A1B42F4D100871098 /* onboarding.json */; };
 		491E67691A8C406800B35F26 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 491E67681A8C406800B35F26 /* Podfile */; };
 		494985441A9EBC0E00B4393E /* OptionsTrayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 494985431A9EBC0E00B4393E /* OptionsTrayCell.m */; };
 		494985491A9EBD6400B4393E /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494985451A9EBD6400B4393E /* About.xib */; };
@@ -58,6 +65,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		290AB3001B42EB470088EA30 /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
+		290AB3011B42EB470088EA30 /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
+		290AB3081B42ED800088EA30 /* UIColor+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+App.h"; sourceTree = "<group>"; };
+		290AB3091B42ED800088EA30 /* UIColor+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+App.m"; sourceTree = "<group>"; };
+		290AB30A1B42ED800088EA30 /* UIFont+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+App.h"; sourceTree = "<group>"; };
+		290AB30B1B42ED800088EA30 /* UIFont+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+App.m"; sourceTree = "<group>"; };
+		290AB30E1B42EE3A0088EA30 /* UIButton+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+App.h"; sourceTree = "<group>"; };
+		290AB30F1B42EE3A0088EA30 /* UIButton+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+App.m"; sourceTree = "<group>"; };
 		290DA0FE1A79545700AF38D7 /* OptionsTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsTray.h; sourceTree = "<group>"; };
 		290DA0FF1A79545700AF38D7 /* OptionsTray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsTray.m; sourceTree = "<group>"; };
 		29116E921A6FFD0800E546DF /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -94,6 +109,11 @@
 		29E2E3531A683AE50048D0AB /* BlueRocketFuelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlueRocketFuelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E2E3581A683AE50048D0AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29E2E3591A683AE50048D0AB /* BlueRocketFuelAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueRocketFuelAppTests.m; sourceTree = "<group>"; };
+		29FE3E961B42F4D100871098 /* BRFIntroSlideshow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRFIntroSlideshow.h; sourceTree = "<group>"; };
+		29FE3E971B42F4D100871098 /* BRFIntroSlideshow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRFIntroSlideshow.m; sourceTree = "<group>"; };
+		29FE3E981B42F4D100871098 /* BRFIntroSlideshow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BRFIntroSlideshow.storyboard; sourceTree = "<group>"; };
+		29FE3E991B42F4D100871098 /* BRFIntroSlideshowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRFIntroSlideshowDelegate.h; sourceTree = "<group>"; };
+		29FE3E9A1B42F4D100871098 /* onboarding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = onboarding.json; sourceTree = "<group>"; };
 		491E67681A8C406800B35F26 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		494985421A9EBC0E00B4393E /* OptionsTrayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsTrayCell.h; sourceTree = "<group>"; };
 		494985431A9EBC0E00B4393E /* OptionsTrayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsTrayCell.m; sourceTree = "<group>"; };
@@ -197,6 +217,14 @@
 				291F58D11A719AA100075294 /* NavigationController.m */,
 				291F58D21A719AA100075294 /* StartupViewController.h */,
 				291F58D31A719AA100075294 /* StartupViewController.m */,
+				290AB3001B42EB470088EA30 /* AlertController.h */,
+				290AB3011B42EB470088EA30 /* AlertController.m */,
+				290AB3081B42ED800088EA30 /* UIColor+App.h */,
+				290AB3091B42ED800088EA30 /* UIColor+App.m */,
+				290AB30A1B42ED800088EA30 /* UIFont+App.h */,
+				290AB30B1B42ED800088EA30 /* UIFont+App.m */,
+				290AB30E1B42EE3A0088EA30 /* UIButton+App.h */,
+				290AB30F1B42EE3A0088EA30 /* UIButton+App.m */,
 				299B0D191A6ED00800A9B28E /* Register */,
 				29116EA31A7083B100E546DF /* Login */,
 				29116E911A6FFCCE00E546DF /* Main */,
@@ -248,6 +276,7 @@
 				29334FC61A784F8D00CE6216 /* AppUser.h */,
 				29334FC71A784F8D00CE6216 /* AppUser.m */,
 				299B0D101A6ECED800A9B28E /* ui */,
+				29FE3E951B42F4D100871098 /* BlueRocketFuelIntroSlideshow */,
 				29E2E34A1A683AE50048D0AB /* Images.xcassets */,
 				29E2E34C1A683AE50048D0AB /* LaunchScreen.xib */,
 				29E2E33D1A683AE50048D0AB /* Supporting Files */,
@@ -280,6 +309,18 @@
 				29E2E3581A683AE50048D0AB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29FE3E951B42F4D100871098 /* BlueRocketFuelIntroSlideshow */ = {
+			isa = PBXGroup;
+			children = (
+				29FE3E961B42F4D100871098 /* BRFIntroSlideshow.h */,
+				29FE3E971B42F4D100871098 /* BRFIntroSlideshow.m */,
+				29FE3E981B42F4D100871098 /* BRFIntroSlideshow.storyboard */,
+				29FE3E991B42F4D100871098 /* BRFIntroSlideshowDelegate.h */,
+				29FE3E9A1B42F4D100871098 /* onboarding.json */,
+			);
+			path = BlueRocketFuelIntroSlideshow;
 			sourceTree = "<group>";
 		};
 		3710CA9A659BBCEE0065D196 /* Pods */ = {
@@ -378,10 +419,12 @@
 				297967C01A69937500B7408B /* BlueRocketFuelAppStaging.xcconfig in Resources */,
 				491E67691A8C406800B35F26 /* Podfile in Resources */,
 				29E2E3491A683AE50048D0AB /* Main.storyboard in Resources */,
+				29FE3E9D1B42F4D100871098 /* onboarding.json in Resources */,
 				297967BA1A6988DF00B7408B /* config.json in Resources */,
 				29E2E34E1A683AE50048D0AB /* LaunchScreen.xib in Resources */,
 				29E2E34B1A683AE50048D0AB /* Images.xcassets in Resources */,
 				297967BB1A6988DF00B7408B /* strings.json in Resources */,
+				29FE3E9C1B42F4D100871098 /* BRFIntroSlideshow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +475,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290AB3021B42EB470088EA30 /* AlertController.m in Sources */,
+				290AB3101B42EE3A0088EA30 /* UIButton+App.m in Sources */,
 				29254B231A78037300978983 /* Profile.m in Sources */,
 				291F58D41A719AA100075294 /* NavigationController.m in Sources */,
 				29334FCB1A78547900CE6216 /* EditProfile.m in Sources */,
@@ -439,11 +484,14 @@
 				290DA1001A79545700AF38D7 /* OptionsTray.m in Sources */,
 				29116E941A6FFD0800E546DF /* MainTableViewController.m in Sources */,
 				29334FC81A784F8D00CE6216 /* AppUser.m in Sources */,
+				290AB30D1B42ED800088EA30 /* UIFont+App.m in Sources */,
 				291F58D51A719AA100075294 /* StartupViewController.m in Sources */,
 				29E2E3431A683AE50048D0AB /* AppDelegate.m in Sources */,
+				29FE3E9B1B42F4D100871098 /* BRFIntroSlideshow.m in Sources */,
 				292B7C3E1A72D2CF0090B246 /* About.m in Sources */,
 				29E2E3401A683AE50048D0AB /* main.m in Sources */,
 				299B0D1C1A6ED01500A9B28E /* RegisterTableViewController.m in Sources */,
+				290AB30C1B42ED800088EA30 /* UIColor+App.m in Sources */,
 				494985441A9EBC0E00B4393E /* OptionsTrayCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

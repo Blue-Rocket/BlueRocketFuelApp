@@ -23,6 +23,9 @@
 //
 
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
+#import "BRFIntroSlideshow.h"
+#import "UIColor+App.h"
+#import "AppDelegate.h"
 
 #import "StartupViewController.h"
 
@@ -37,24 +40,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    appDelegate.window.tintColor = [UIColor tintColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     
-    // open the apporpriate view based on whither or not
-    // the user has registered and logged in...
+    // show the intro slide show if it hasn't been shown once already...
+    if ([BRFIntroSlideshow showInNavigationController:self.navigationController forDelegate:self]) {
+        // if the intro slide show is being shown the first time, then we simply return...
+        return;
+    }
     
-    if (CurrentAppUser.newUser) {
-        [self performSegueWithIdentifier:@"register" sender:self];
-    }
-    else if (!CurrentAppUser.authenticated) {
-        [self performSegueWithIdentifier:@"login" sender:self];
-    }
-    else {
-        [self performSegueWithIdentifier:@"main" sender:self];
-    }
+    // else we call the intro slide delegate end method which
+    // has the logic to display the correct view depending on current user state...
+    [self introSlideShowDidEnd];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -71,5 +72,18 @@
                                                                             target:nil
                                                                             action:nil];
 }
+
+- (void)introSlideShowDidEnd {
+    if (CurrentAppUser.newUser) {
+        [self performSegueWithIdentifier:@"register" sender:self];
+    }
+    else if (!CurrentAppUser.authenticated) {
+        [self performSegueWithIdentifier:@"login" sender:self];
+    }
+    else {
+        [self performSegueWithIdentifier:@"home" sender:self];
+    }
+}
+
 
 @end
