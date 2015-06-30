@@ -6,7 +6,9 @@
   },
   "button" : {
     "ok" : "OK",
-    "edit" : "Edit"
+    "edit" : "Edit",
+      "skip" : "Skip",
+      "done" : "Done"
   },
   "register" : {
     "title" : "Register",
