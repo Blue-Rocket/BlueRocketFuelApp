@@ -20,24 +20,28 @@
       "profileEdit" : {
         "method" : "PUT",
         "path" : "users"
+      },
+      "resetPassword" : {
+        "path" : "password_resets",
+        "method" : "POST"
       }
     }
   },
-    "optionsTray" : [
-                     {
-                     "title" : "Main",
-                     "resourceName" : "Main",
-                     "resourceType" : "storyboard"
-                     },
-                     {
-                     "title" : "Profile",
-                     "resourceName" : "Profile",
-                     "resourceType" : "storyboard"
-                     },
-                     {
-                     "title" : "About",
-                     "resourceName" : "About",
-                     "resourceType" : "xib"
-                     }
-                     ]
+  "optionsTray" : [
+    {
+      "title" : "Main",
+      "resourceName" : "Main",
+      "resourceType" : "storyboard"
+    },
+    {
+      "title" : "Profile",
+      "resourceName" : "Profile",
+      "resourceType" : "storyboard"
+    },
+    {
+      "title" : "About",
+      "resourceName" : "About",
+      "resourceType" : "xib"
+    }
+  ]
 }
