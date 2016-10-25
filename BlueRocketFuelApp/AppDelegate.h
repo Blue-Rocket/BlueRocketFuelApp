@@ -28,8 +28,5 @@
 
 @interface AppDelegate : BRAppDelegate <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-
-
 @end
 

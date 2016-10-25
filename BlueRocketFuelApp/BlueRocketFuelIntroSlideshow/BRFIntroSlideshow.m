@@ -7,6 +7,7 @@
 //
 
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
+#import <BRLocalize/Core.h>
 #import "BRFIntroSlideshow.h"
 #import "UIButton+App.h"
 

@@ -74,6 +74,7 @@
 }
 
 - (void)introSlideShowDidEnd {
+    /*
     if (CurrentAppUser.newUser) {
         [self performSegueWithIdentifier:@"register" sender:self];
     }
@@ -83,6 +84,7 @@
     else {
         [self performSegueWithIdentifier:@"home" sender:self];
     }
+    */
 }
 
 

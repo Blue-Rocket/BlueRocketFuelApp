@@ -23,6 +23,7 @@
 //
 
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
+#import <BRLocalize/Core.h>
 
 #import "RegisterTableViewController.h"
 #import "UIColor+App.h"
@@ -94,7 +95,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"profile"]) {
-        EditProfile *vc = (EditProfile *)segue.destinationViewController;
+        //EditProfile *vc = (EditProfile *)segue.destinationViewController;
     }
 }
 
@@ -121,7 +122,7 @@ static const NSInteger registrationErrorCode = 422;
                                                                              }
                                                                      }]
          beginWithCompletion:^(BRWebServiceResponse *response) {
-             [CurrentAppUser initializeWithDictionary:response.JSONDictionary];
+             //[CurrentAppUser initializeWithDictionary:response.JSONDictionary];
              [self performSegueWithIdentifier:@"profile" sender:self];
          } failure:^(NSError *error, NSInteger code) {
              switch (code) {

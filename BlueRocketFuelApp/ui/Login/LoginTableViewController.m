@@ -23,6 +23,7 @@
 //
 
 #import <BlueRocketFuelCore/BlueRocketFuelCore.h>
+#import <BRLocalize/Core.h>
 
 #import "LoginTableViewController.h"
 #import "UIColor+App.h"
@@ -107,7 +108,7 @@
                                                                              }
                                                                      }]
          beginWithCompletion:^(BRWebServiceResponse *response) {
-             [CurrentAppUser initializeWithDictionary:response.JSONDictionary];
+             //[CurrentAppUser initializeWithDictionary:response.JSONDictionary];
              [self performSegueWithIdentifier:@"main" sender:self];
          } failure:^(NSError *error, NSInteger code) {
              switch (code) {

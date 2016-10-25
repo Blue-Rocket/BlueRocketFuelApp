@@ -55,7 +55,7 @@
                                                                                 }
                                                                         }]
          beginWithCompletion:^(BRWebServiceResponse *response) {
-             [CurrentAppUser initializeWithDictionary:response.JSONDictionary];
+             //[CurrentAppUser initializeWithDictionary:response.JSONDictionary];
              
              // the web service, however, is the authority on the user's data, so
              // update and present data from it once we have it...
@@ -84,8 +84,8 @@
 }
 
 - (void)populateFields {
-    self.nameField.text = CurrentAppUser.name;
-    self.emailField.text = CurrentAppUser.email;
+    //self.nameField.text = CurrentAppUser.name;
+    //self.emailField.text = CurrentAppUser.email;
 }
 
 @end

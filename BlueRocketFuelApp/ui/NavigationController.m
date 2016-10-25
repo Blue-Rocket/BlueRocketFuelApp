@@ -53,7 +53,7 @@ static NavigationController *sharedInstance;
 }
 
 - (void)logOut {
-    [CurrentAppUser clear];
+    //[CurrentAppUser clear];
     [UIView animateWithDuration:0.4
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn

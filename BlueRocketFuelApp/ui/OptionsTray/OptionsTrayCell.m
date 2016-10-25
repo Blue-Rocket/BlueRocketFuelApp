@@ -15,6 +15,7 @@
 @implementation OptionsTrayCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

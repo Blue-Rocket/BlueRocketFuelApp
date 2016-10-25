@@ -49,7 +49,7 @@
     
     [[BRWebServiceRequest requestForAPI:@"profileView"]
      beginWithCompletion:^(BRWebServiceResponse *response) {
-         [CurrentAppUser initializeWithDictionary:response.JSONDictionary];
+         //[CurrentAppUser initializeWithDictionary:response.JSONDictionary];
          
          // the web service, however, is the authority on the user's data, so
          // update and present data from it once we have it...
@@ -66,8 +66,8 @@
 }
 
 - (void)populateFields {
-    self.nameLabel.text = CurrentAppUser.name;
-    self.emailLabel.text = CurrentAppUser.email;
+    //self.nameLabel.text = CurrentAppUser.name;
+    //self.emailLabel.text = CurrentAppUser.email;
 }
 
 - (IBAction)edit:(id)sender {

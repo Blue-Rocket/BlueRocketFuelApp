@@ -23,7 +23,6 @@ echo "Creating new project at: $(pwd)"
 
 cp -fr $TEMPLATE_DIR/BlueRocketFuelAppTests \
 $TEMPLATE_DIR/BlueRocketFuelApp \
-$TEMPLATE_DIR/xcconfigs \
 $TEMPLATE_DIR/BlueRocketFuelApp.xcodeproj \
 $TEMPLATE_DIR/config.json \
 $TEMPLATE_DIR/strings.json \
@@ -32,21 +31,18 @@ $TEMPLATE_DIR/Podfile \
 
 /usr/bin/sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/project.pbxproj
 /usr/bin/sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/xcshareddata/xcschemes/BlueRocketFuelApp.xcscheme
-/usr/bin/sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/xcshareddata/xcschemes/BlueRocketFuelAppStaging.xcscheme
 /usr/bin/sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata
 /usr/bin/sed -i "" s/BlueRocketFuelApp/$PROJECT_NAME/g BlueRocketFuelAppTests/BlueRocketFuelAppTests.m
+/usr/bin/sed -i "" s/\'BlueRocketFuelApp\'/\'$PROJECT_NAME\'/g Podfile
 
 cd BlueRocketFuelApp.xcodeproj/xcshareddata/xcschemes/
 mv -f BlueRocketFuelApp.xcscheme "$PROJECT_NAME.xcscheme"
-mv -f BlueRocketFuelAppStaging.xcscheme "${PROJECT_NAME}Staging.xcscheme"
 
 cd "$PROJECT_DIR"
 mv -f BlueRocketFuelAppTests/BlueRocketFuelAppTests.m "BlueRocketFuelAppTests/${PROJECT_NAME}Tests.m"
 mv -f BlueRocketFuelAppTests "${PROJECT_NAME}Tests"
 mv -f BlueRocketFuelApp "$PROJECT_NAME"
 mv -f BlueRocketFuelApp.xcodeproj "$PROJECT_NAME.xcodeproj"
-mv -f xcconfigs/BlueRocketFuelApp.xcconfig "xcconfigs/${PROJECT_NAME}.xcconfig"
-mv -f xcconfigs/BlueRocketFuelAppStaging.xcconfig "xcconfigs/${PROJECT_NAME}Staging.xcconfig"
 
 cd "$PROJECT_NAME.xcodeproj"
 
